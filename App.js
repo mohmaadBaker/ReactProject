@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { useContext } from 'react';
 import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile';
@@ -10,7 +10,7 @@ function App() {
   const contexts = useContext(AuthContext)
   return (
     <Layout>
-      <Switch>
+      <BrowserRouter>
         <Route path='/' exact>
           <HomePage />
         </Route>
@@ -25,7 +25,7 @@ function App() {
         </Route>
 
         <Route path='*' ><Redirect to='/' /></Route>
-      </Switch>
+      </BrowserRouter>
     </Layout >
   );
 }
